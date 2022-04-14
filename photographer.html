@@ -9,7 +9,9 @@
   </head>
   <body>
     <header>
-      <img src="assets/images/logo.png" class="logo" />
+      <a href="./index.html">
+        <img src="assets/images/logo.png" class="logo" />
+      </a>
     </header>
     <main id="main">
       <div class="photograph-header">
@@ -22,12 +24,26 @@
           <h2>Contactez-moi</h2>
           <img src="assets/icons/close.svg" onclick="closeModal()" />
         </header>
+        <br/>
 				<form>
 					<div>
 						<label>Prénom</label>
-						<input />
+						<input type="text" id="firstName" />
+            <div class="result" id="firstError"></div>
+
+            <label>Nom</label>
+						<input type="text" id="lastName" />
+            <div class="result" id="lastError"></div>
+
+            <label>Email</label>
+						<input type="text" id="email" />
+            <div class="result" id="emailError"></div>
+
+            <label>Votre message</label>
+						<textarea  id="message" type="textarea"></textarea>
+            <div class="result" id="messageError"></div>
 					</div>
-          <button class="contact_button">Envoyer</button>
+          <button class=" submit contact_button">Envoyer</button>
 				</form>
 			</div>
 		</div>
