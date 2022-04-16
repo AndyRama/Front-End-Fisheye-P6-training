@@ -62,6 +62,20 @@ function validationFirst() {
 }
 
 // validation for input lastName
+function validationLast() {
+  if(lastName.value.trim().length == 0) {
+    errorLast.classList.add("errorStyle");
+    errorLast.classList.add("errorForm");
+    return false ; 
+  } else if (lastName.value.trim().length <2 ) {
+    errorLast.classList.add("errorStyle");
+    errorLast.classList.add("errorForm");
+    return false ; 
+  } else {
+    lastName.innerHTML = "";
+    return true;
+  }
+}
 // validation for input email
 // validation for input message
 // submit form
