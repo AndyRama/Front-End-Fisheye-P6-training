@@ -25,24 +25,23 @@
           <img src="assets/icons/close.svg" onclick="closeModal()" />
         </header>
         <br/>
-				<form>
-					<div>
-						<label>Prénom</label>
-						<input type="text" id="firstName" />
-            <div class="result" id="firstError"></div>
+				<form name="form-field" id="form-field" method="get" action="index.html">
+          <label>Prénom</label>
+          <input type="text" id="firstName" />
+          <div class="result" id="firstError"></div>
 
-            <label>Nom</label>
-						<input type="text" id="lastName" />
-            <div class="result" id="lastError"></div>
+          <label>Nom</label>
+          <input type="text" id="lastName" />
+          <div class="result" id="lastError"></div>
 
-            <label>Email</label>
-						<input type="text" id="email" />
-            <div class="result" id="emailError"></div>
+          <label>Email</label>
+          <input type="text" id="email" />
+          <div class="result" id="emailError"></div>
 
-            <label>Votre message</label>
-						<textarea  id="message" type="textarea"></textarea>
-            <div class="result" id="messageError"></div>
-					</div>
+          <label>Votre message</label>
+          <textarea  id="message" type="textarea"></textarea>
+          <div class="result" id="messageError"></div>					
+					
           <button class=" submit contact_button">Envoyer</button>
 				</form>
 			</div>
