@@ -3,16 +3,15 @@ const form = document.querySelector(".form");
 
 const first = document.getElementById("firstName");
 const last = document.getElementById("lastName");
-const email = document.getElementById("email");
 const message = document.getElementById("message");
 
 const errorFirst = document.getElementById("firstError");
 const errorLast = document.getElementById("lastError");
-const mail = document.getElementById("email");
 const errorMessage = document.getElementById("messageError");
 
 const formField = document.getElementById("form-field");
 
+const email = document.getElementById("email");
 const emailRegex = /^[a-zA-Z][a-zA-Z0-9\-\_\.]+@[a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,}$/;
 const emailError = document.getElementById("emailError");
 
@@ -81,24 +80,45 @@ function validationLast() {
   }
 }
 // validation for input email
+function validationEmail() {
+  if(email.value == "") {
+    emailError.innerHTML ='email Blank';
+    emailError.classList.add("errorStyle");
+    email.classList.add("errorForm");
+    return false ;
+  } else if (!email.match(emailRegex )) {
+    emailError.innerHTML ='email not valide';
+    emailError.classList.add("errorStyle");
+    email.classList.add("errorForm");
+    return false ;
+  } else {
+    emailError.innerHTML ="";
+    return true;
+  }
+}
+
 // validation for input message
 
 //listen event on each for input
 first.addEventListener("input", validationFirst);
 last.addEventListener("input", validationLast);
+email.addEventListener("input",validationEmail);
 //sending the forms
 formField.addEventListener("submit", (event) => {
   event.preventDefault();
   validationFirst();
   validationLast();
+  validationEmail();
   //Check value ok and submit form
   if(
     validationFirst() == true &
-    validationLast() == true
+    validationLast() == true &
+    validationEmail( ) == true
   ) {
     // print value in console
-    console.log(firstName.value);
-    console.log(lastName.value);
+    console.log(first.value);
+    console.log(last.value);
+    console.log(email.value)
   }
   //Reset form 
 })
