@@ -21,7 +21,7 @@ const picture = `assets/photographers/${portrait}`;
 
     //add price 
     const tjmprice = document.createElement('span');
-    ptagline.classList.add('price');
+    tjmprice.classList.add('price');
     tjmprice.innerHTML=`${price}/par jours`;
 
     article.appendChild(img);
