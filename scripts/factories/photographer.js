@@ -24,12 +24,17 @@ const picture = `assets/photographers/${portrait}`;
     tjmprice.classList.add('price');
     tjmprice.innerHTML=`${price}/par jours`;
 
-    article.appendChild(img);
-    
+    //link profile
+    function linkProfile() {
+      window.open(`photographer.html?id=${id}`);
+    }
+
+    article.appendChild(img);    
     article.appendChild(h2);
     article.appendChild(hCity);
     article.appendChild(ptagline);
     article.appendChild(tjmprice);
+    article.addEventListener("click", linkProfile);
 
     return (article);
   }
