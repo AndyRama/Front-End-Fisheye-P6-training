@@ -17,6 +17,7 @@ async function getPhotographerById() {
 
     const mediaArray = medias.filter(media => media.photographerId == id)
     photographeObject.medias = mediaArray;
+
       
 	return { photographer: photographeObject }
 }

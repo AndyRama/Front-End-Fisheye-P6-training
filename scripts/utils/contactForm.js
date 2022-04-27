@@ -114,7 +114,7 @@ function validationEmail() {
 
 // validation for input message
 function validationMessage() {
-  // reset error email
+  // reset error message
   message.innerHTML="";
   errorMessage.classList.remove("errorStyle");
   errorMessage.classList.remove("errorForm");
