@@ -4,8 +4,12 @@ const picture = `assets/photographers/${portrait}`;
 
   function getUserCardDOM() {
     const article = document.createElement('article');
+
+    //add image
     const img = document.createElement('img');
     img.setAttribute("src", picture);
+
+    //add name
     const h2 = document.createElement('h2');
     h2.textContent = name;
 
@@ -14,7 +18,7 @@ const picture = `assets/photographers/${portrait}`;
     hCity.classList.add('city');
     hCity.textContent = `${city}, ${country}`; 
 
-    //Add tagline
+    //add tagline
     const ptagline = document.createElement('p');
     ptagline.classList.add('tagline');
     ptagline.innerHTML = tagline;
@@ -22,7 +26,7 @@ const picture = `assets/photographers/${portrait}`;
     //add price 
     const tjmprice = document.createElement('span');
     tjmprice.classList.add('price');
-    tjmprice.innerHTML=`${price}/par jours`;
+    tjmprice.innerHTML= `${price}€ / par jours`;
 
     //link profile
     function linkProfile() {

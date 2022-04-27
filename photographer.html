@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7d17636476.js" crossorigin="anonymous"></script>
     <title>Fisheye - photographe </title>
   </head>
   <body>
@@ -14,15 +15,29 @@
       </a>
     </header>
     <main id="main">
-      <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+      <div class="container">
+        <div class="photograph-header">
+          <div class="presentation">
+            <h1 class="profile-title"></h1>
+            <h3 class="location"></h3>
+            <p class="slogan"></p>
+          </div>
+          <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+          <img id="thumbs" src="" alt="picture profile">
+        </div>
       </div>
+
+      <div class="card-container"></div>
+
+      <span class="price_badge"><span id="nblikes"></span><i class="card-likeB fas fa-heart"></i><div id="price"></div></span>
+   
     </main>
     <div id="contact_modal">
 			<div class="modal">
 				<header>
           <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+          <h3 id="fullName">Andy Ramaroson</h3>
+          <img src="assets/icons/close.svg" onclick="closeModal()"/>
         </header>
         <br/>
 				<form name="form-field" id="form-field" method="get" action="index.html">
@@ -47,5 +62,7 @@
 			</div>
 		</div>
     <script src="/scripts/utils/contactForm.js"></script>
+    <script src="/scripts/factories/profileFactory.js"></script>
+    <Script src="/scripts/pages/photographer.js"></Script>
   </body>
 </html>
