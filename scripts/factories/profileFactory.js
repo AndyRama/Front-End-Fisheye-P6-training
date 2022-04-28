@@ -40,7 +40,7 @@ function profileFactories(photographeObject) {
     medias.map(media => {
       nblike += media.likes;
     })
-    document.getElementById('nblikes').innerHTML = nblike;    
+    document.getElementById('nblikes').innerText = nblike;    
   }  
   // DROPDOWN ORDER BY
   return { name, thumbs, picture, pictureVideo, fillPagePhotographe}
@@ -48,12 +48,13 @@ function profileFactories(photographeObject) {
 
 function displayMedias(medias) {
   //creer un nouveau tableau
-  medias.map(media => {
+  medias.map( media => {
     // Recupere le container
     const cardContainer = document.querySelector(".card-container");
     let photoToDisplay;
     let elementToDisplay;
     let type;
+    
     // type de contenue (image/video)
     if(media.image) {
       photoToDisplay = media.image;
@@ -64,10 +65,15 @@ function displayMedias(medias) {
       type = "video";
       elementToDisplay = `<video src="./assets/photos/${photoToDisplay}" class="card-video" alt="${media.title}"></video>`;
     }
-
+    
     // cookies timestamp for one clic
     let mediaLike = media.likes;
-    
+    let cookie = localStorage.getItem(media.id);
+    if(cookie != null ) {
+      mediaLike++
+    }
+   
+
     // creation d'un model de card, interpoler les datas pour chaque gallery
     const mediaCardImage = `
       <div class="cards" >      
@@ -85,3 +91,18 @@ function displayMedias(medias) {
     cardContainer.innerHTML = cardContainer.innerHTML + mediaCardImage;
   })
 }
+
+//increment value like
+function incrementLike(e) {
+  
+  const id = e.id;
+  const cookie = localStorage.getItem(id);
+
+  if(cookie == null) {
+    e.firstElementChild.innerText = parseInt(e.firstElementChild.innerText) +1;
+    document.getElementById("nblikes").innerText = parseInt(document.getElementById("nblikes").innerText)+1;
+    localStorage.setItem(id,"click");
+  }
+}
+
+
